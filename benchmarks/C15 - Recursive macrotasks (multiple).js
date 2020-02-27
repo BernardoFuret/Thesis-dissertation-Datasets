@@ -13,7 +13,7 @@
 const fs = require( 'fs' );
 
 function recursiveMacrotaskAsyncIO() {
-	fs.readFile( 't.txt', 'utf8', ( err, data ) => {
+	fs.readFile( `${__dirname}/t.txt`, 'utf8', ( err, data ) => {
 		if ( err ) throw err;
 
 		console.log( 'async I/O' );
