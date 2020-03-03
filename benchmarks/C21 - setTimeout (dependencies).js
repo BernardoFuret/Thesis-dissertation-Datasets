@@ -6,7 +6,7 @@
 const o = {};
 
 setTimeout( () => {
-	o.print = console.log;
+	o.print( 'Program ended; Stack is empty; Sync code is done.' );
 }, 500 );
 
-o.print( 'Program ended; Stack is empty; Sync code is done.' );
+o.print = console.log;
