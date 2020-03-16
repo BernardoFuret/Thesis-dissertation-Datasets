@@ -1,14 +1,13 @@
 /**
  * Promise with `then` and `catch` reactions.
  */
-const p = new Promise( ( resolve, reject ) => { //> B1
+const p = new Promise( ( resolve, reject ) => {
 	if ( Math.random() < 0.5 ) {
 		resolve( "A" );
 	} else {
 		reject( "B" );
 	}
-} ).then(
-	console.log.bind( console, "Result is A:" ) //> B2
-).catch(
-	console.warn.bind( console, "Result is B:" ) //> B3
-);
+} )
+	.then( v => console.log( "Result is A:", v ) )
+	.catch( v => console.warn( "Result is B:", v ) )
+;

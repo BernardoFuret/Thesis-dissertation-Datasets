@@ -12,5 +12,5 @@ const p3 = new Promise( ( rs, rj ) => rj( 'p3' ) );
 const p4 = new Promise( r => console.log( 'p4 never resolves' ) );
 
 Promise.allSettled( [ p1, p2, p3, p4 ] )
-	.then( console.log.bind( console, 'resolved' ) )
+	.then( v => console.log( 'resolved', v ) )
 ;
