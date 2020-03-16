@@ -3,7 +3,7 @@
  */
 [ 1, 2, 3, 4, 5 ].reduce( ( chain, i ) => {
 	return chain.then( () => new Promise( r => {
-		window.setTimeout( () => {
+		setTimeout( () => {
 			console.log( i );
 			r();
 		}, 1000 );
