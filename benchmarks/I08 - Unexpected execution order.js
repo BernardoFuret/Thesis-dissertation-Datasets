@@ -10,7 +10,7 @@ function timerFunction() {
 	setTimeout( () => console.log( 'time' ) )
 }
 
-async function promiseFunction() {
+function promiseFunction() {
 	return Promise.resolve( 'promise' )
 		.then( console.log )
 	;
