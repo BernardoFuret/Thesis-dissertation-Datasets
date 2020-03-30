@@ -1,7 +1,7 @@
 /**
  * > setTimeout (dependencies)
  *
- * `o.print` will only be available on the next iteration.
+ * `o.print` will already be available on the next iteration.
  */
 const o = {};
 
