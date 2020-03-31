@@ -1,7 +1,7 @@
 /**
  * > Promise all
  *
- * Correct example of Promise race use.
+ * Correct example of Promise `all` use.
  */
 const p1 = new Promise( r => setTimeout( r, Math.random() * 1000, 'p1' ) );
 

@@ -1,7 +1,7 @@
 /**
  * > Unreachable reaction (allSettled)
  *
- * Neither `p1` nor `p2` resolve, thus the `race` method waits indefinitely.
+ * `p4` never resolves nor rejects, thus the `allSettled` method waits indefinitely.
  */
 const p1 = new Promise( r => r( 'p1' ) );
 

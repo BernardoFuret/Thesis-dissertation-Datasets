@@ -1,7 +1,7 @@
 /**
  * > Promise all with rejection
  *
- * Neither `p1` nor `p2` resolve, thus the `race` method waits indefinitely.
+ * `p2` will reject, so the `catch` reaction will be called.
  */
 const p1 = new Promise( (rs, rj) => setTimeout( rs, 5000, 'p1' ) );
 
