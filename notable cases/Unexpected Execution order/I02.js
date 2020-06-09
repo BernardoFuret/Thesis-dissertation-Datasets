@@ -1,7 +1,3 @@
-function doThrow( msg ) {
-	throw new Error( msg );
-}
-
 function Manager() {}
 
 Manager.prototype.storeString = function( str, onCreate ) {
@@ -13,12 +9,16 @@ Manager.prototype.storeString = function( str, onCreate ) {
 };
 
 Manager.prototype.validateString = function( str ) {
-	return new Promise( r => {
+	return new Promise( ( resolve, reject ) => {
 		setTimeout( () => {
-			r( str === this.str || doThrow( 'Different!' ) );
+			if ( str === this.str ) {
+				resolve( 'Success!' )
+			} else { 
+				reject( 'Different!' );
+			}
 		}, Math.random() * 1000 );
 	} )
-		.then( () => console.log( 'Success!' ) )
+		.then( console.log )
 		.catch( console.warn )
 	;
 };
