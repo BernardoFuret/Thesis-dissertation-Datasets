@@ -27,6 +27,6 @@ var manager = new Manager();
 
 var str = 'str';
 
-manager.storeString( str, str => {
+manager.storeString( str, storedStr => {
 	manager.validateString( str );
 } );
