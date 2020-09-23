@@ -40,11 +40,11 @@ p1
 	.then( v => {
 		console.log( 'p1.then 3' );
 
-		const p6 = Promise.resolve().then( v => console.log( 'p6.then 1 << p1.then 3' ) ); // Schedule to immediately after 'queueMicrotask << p1.then 3'
+		const p6 = Promise.resolve().then( v => console.log( 'p6.then 1 << p1.then 3' ) ); // Schedule to right before 'p1.then 4'
 
-		queueMicrotask( () => console.log( 'queueMicrotask << p1.then 3' ) ); // Schedule to right before 'p1.then 4'
+		queueMicrotask( () => console.log( 'queueMicrotask << p1.then 3' ) ); // Schedule to immediately after 'p6.then 1 << p1.then 3'
 
-		p5.then( v => console.log( 'p5.then 1 << p1.then 3' ) ); // Schedule to immediately after 'p6.then 1 << p1.then 3'
+		p5.then( v => console.log( 'p5.then 1 << p1.then 3' ) ); // Schedule to immediately after 'queueMicrotask << p1.then 3'
 	} )
 	.then( v => console.log( 'p1.then 4' ) )
 ;
