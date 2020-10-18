@@ -1,5 +1,5 @@
 /**
- * Looped Promise chain, with Timeout
+ * Looped Promise chain
  * (C18 but with `for...of`)
  */
 //const a = [ 1, 2, 3, 4, 5 ];
